@@ -1,0 +1,63 @@
+{
+    "name": "node-app-demo",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "build:prod": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
+        "build:dev": "tsc && eslint '*/**/*.{js,ts}' --fix",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "watch": "tsc -w"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsc --noEmit && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "./src/*.{js,ts}": [
+            "prettier --write",
+            "eslint src/*.{js,ts} --fix-dry-run"
+        ]
+    },
+    "dependencies": {
+        "@koa/cors": "^3.0.0",
+        "class-validator": "^0.11.1",
+        "dotenv": "^8.2.0",
+        "koa": "^2.11.0",
+        "koa-bodyparser": "^4.3.0",
+        "koa-helmet": "^5.2.0",
+        "koa-jwt": "^3.6.0",
+        "koa-router": "^8.0.8",
+        "winston": "^3.2.1"
+    },
+    "devDependencies": {
+        "@types/dotenv": "^8.2.0",
+        "@types/jest": "^25.1.4",
+        "@types/koa": "^2.11.3",
+        "@types/koa-bodyparser": "^4.3.0",
+        "@types/koa-helmet": "^3.1.2",
+        "@types/koa-jwt": "^3.3.0",
+        "@types/koa-router": "^7.4.0",
+        "@types/koa__cors": "^3.0.1",
+        "@types/node": "^13.9.5",
+        "@types/prettier": "1.19.1",
+        "@types/supertest": "^2.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "husky": "^4.2.3",
+        "jest": "^25.2.3",
+        "lint-staged": "^10.0.9",
+        "prettier": "2.0.2",
+        "supertest": "^4.0.2",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.8.3"
+    },
+    "engines": {
+        "node": "12.x.x",
+        "npm": "6.x.x"
+    }
+}
