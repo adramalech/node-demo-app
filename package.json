@@ -3,8 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "lint": "tsc --noEmit && eslint  \"**/*.js\" \"**/*.ts\" --quiet --fix",
-        "lint:verbose": "tsc && eslint  \"**/*.js\" \"**/*.ts\" --fix",
+        "lint": "tsc --noEmit && eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix --quiet",
+        "lint:verbose": "tsc && eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix",
         "test": "jest",
         "test:watch": "jest --watch",
         "watch": "tsc -w",
@@ -19,8 +19,8 @@
     },
     "lint-staged": {
         "./src/*.{js,ts,md}": [
-            "prettier --write",
-            "eslint src/*.{js,ts} --fix"
+            "prettier --config .prettierrc.js \"**/*.js\" \"**/*.ts\" --write",
+            "eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix"
         ]
     },
     "dependencies": {
@@ -59,7 +59,7 @@
         "typescript": "^3.9.7"
     },
     "engines": {
-        "node": "12.x.x",
+        "node": "14.x.x",
         "npm": "6.x.x"
     }
 }
