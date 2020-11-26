@@ -10,6 +10,5 @@ module.exports = {
     },
     rules: {
         // place to specify ESLint rules that may overwrite specified rules.
-        maxLen: [1, 120, 4],
     },
 };
