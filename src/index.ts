@@ -1,21 +1,20 @@
-import Koa, { DefaultContext, DefaultState } from 'koa';
-import Router from 'koa-router';
-import bodyParser from 'koa-bodyparser';
+import Koa, { DefaultContext, DefaultState } from 'koa'
+import Router from 'koa-router'
+import bodyParser from 'koa-bodyparser'
 
-const app: Koa<DefaultState, DefaultContext> = new Koa();
+const app: Koa<DefaultState, DefaultContext> = new Koa()
 
-app.use(bodyParser());
+app.use(bodyParser())
 
-const router = new Router();
+const router = new Router()
 
 router.get('/', async (ctx, next) => {
-    ctx.body = { msg: 'Hello World!' };
+  ctx.body = { msg: 'Hello World!' }
+  await next()
+})
 
-    await next();
-});
-
-app.use(router.routes()).use(router.allowedMethods());
+app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(3000, () => {
-    console.log('Koa started :3000');
-});
+  console.log('Koa started :3000')
+})
