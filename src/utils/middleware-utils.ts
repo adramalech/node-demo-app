@@ -17,5 +17,9 @@ export const requestId = async (ctx: AppContext, next: Next): Promise<void> => {
     ctx.set('X-Request-Id', uuid.v4())
   }
 
+  ctx.state.reqId = id
+
   ctx['reqId'] = requestId
+
+  return next()
 }

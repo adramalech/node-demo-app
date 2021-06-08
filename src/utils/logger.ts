@@ -17,12 +17,12 @@ const buildLogger = ({ name, level }: Input): Logger =>
     ],
   })
 
-export const logger = (ctx: Context, next: Next) => {
+export const logger = (ctx: Context, next: Next): Promise<void> => {
   const logInstance = buildLogger({ name: 'node-demo-app', level: 'info' })
   ctx.log = logInstance
-  return next
+  return next()
 }
 
-export const requestLogger = (ctx: Context, next: Next) => {
-  return next
+export const requestLogger = (ctx: Context, next: Next): Promise<void> => {
+  return next()
 }
