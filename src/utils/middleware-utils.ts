@@ -11,7 +11,11 @@ export const responseTime = async (ctx: Context, next: Next): Promise<void> => {
 
 export const requestId = async (ctx: AppContext, next: Next): Promise<void> => {
   const requestId = ctx.request.get('X-Request-Id') || uuid.v4()
+  const id = ctx.get('X-Request-Id')
+
+  if (!id) {
+    ctx.set('X-Request-Id', uuid.v4())
+  }
+
   ctx['reqId'] = requestId
-  ctx.request.set('reqId', requestId)
-  ctx.log
 }
