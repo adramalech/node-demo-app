@@ -10,7 +10,11 @@ export interface AppContext extends Context {
   log: Logger
 }
 
-const app: Koa<DefaultState, AppContext> = new Koa()
+export interface AppState extends DefaultState {
+  id: string
+}
+
+const app: Koa<AppState, AppContext> = new Koa()
 
 app.use(logger)
 
