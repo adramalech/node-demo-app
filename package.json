@@ -27,14 +27,15 @@
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "base-64": "^1.0.0",
+    "bunyan": "^1.8.15",
     "class-validator": "^0.13.1",
     "dotenv": "^8.2.0",
     "fp-ts": "^2.10.5",
     "fp-ts-contrib": "^0.1.23",
+    "immer": "^9.0.2",
     "io-ts": "^2.2.16",
     "io-ts-reporters": "^1.2.2",
     "io-ts-types": "^0.5.16",
-    "immer": "^9.0.2",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-helmet": "^6.1.0",
@@ -46,6 +47,7 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@types/bunyan": "^1.8.6",
     "@types/jest": "^26.0.23",
     "@types/koa": "^2.13.1",
     "@types/koa-bodyparser": "^4.3.0",
