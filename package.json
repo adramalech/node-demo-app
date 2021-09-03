@@ -34,7 +34,7 @@
     "io-ts": "^2.2.16",
     "io-ts-reporters": "^1.2.2",
     "io-ts-types": "^0.5.16",
-    "immer": "^9.0.2",
+    "immer": "^9.0.6",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-helmet": "^6.1.0",
