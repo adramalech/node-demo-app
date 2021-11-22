@@ -1,6 +1,6 @@
 import { Context, Next } from 'koa'
 import { AppContext } from 'src'
-import * as uuid from 'uuid'
+import { randomUUID } from 'crypto'
 
 export const responseTime = async (ctx: Context, next: Next): Promise<void> => {
   const startTime = Date.now()
@@ -10,11 +10,11 @@ export const responseTime = async (ctx: Context, next: Next): Promise<void> => {
 }
 
 export const requestId = async (ctx: AppContext, next: Next): Promise<void> => {
-  const requestId = ctx.request.get('X-Request-Id') || uuid.v4()
+  const requestId = ctx.request.get('X-Request-Id') || randomUUID()
   const id = ctx.get('X-Request-Id')
 
   if (!id) {
-    ctx.set('X-Request-Id', uuid.v4())
+    ctx.set('X-Request-Id', randomUUID())
   }
 
   ctx.state.reqId = id
