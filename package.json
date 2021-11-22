@@ -4,12 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "tsc --noEmit && eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix --quiet",
-    "lint:verbose": "tsc && eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix",
+    "lint": "tsc --noEmit && eslint --config .eslintrc.cjs \"**/*.js\" \"**/*.ts\" --fix --quiet --no-error-on-unmatched-pattern",
+    "lint:verbose": "tsc && eslint --config .eslintrc.cjs \"**/*.js\" \"**/*.ts\" --fix --no-error-on-unmatched-pattern",
     "test": "jest",
     "test:watch": "jest --watch",
     "watch": "tsc -w",
-    "prettier-format": "prettier --config .prettierrc.js \"**/*.js\" \"**/*.ts\" --write",
+    "prettier-format": "prettier --config .prettierrc.cjs \"**/*.js\" \"**/*.ts\" --write",
     "build:dev": "npm run lint:verbose",
     "build:prod": "npm run lint",
     "start": "node ./dist/index.js"
@@ -21,8 +21,8 @@
   },
   "lint-staged": {
     "./src/*.{js,ts,md}": [
-      "prettier --config .prettierrc.js \"**/*.js\" \"**/*.ts\" --write",
-      "eslint --config .eslintrc.js \"**/*.js\" \"**/*.ts\" --fix"
+      "prettier --config .prettierrc.cjs \"**/*.js\" \"**/*.ts\" --write",
+      "eslint --config .eslintrc.cjs \"**/*.js\" \"**/*.ts\" --fix --no-error-on-unmatched-pattern"
     ]
   },
   "dependencies": {
