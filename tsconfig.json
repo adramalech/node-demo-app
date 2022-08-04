@@ -19,5 +19,5 @@
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "downlevelIteration": true
   },
-  "include": ["src/**/*"]
+  "include": ["*"]
 }
