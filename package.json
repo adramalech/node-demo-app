@@ -71,20 +71,26 @@
     "typescript": "^5.3.3"
   },
   "jest": {
+    "preset": "ts-jest",
+    "verbose": true,
+    "automock": true,
     "rootDir": "src",
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
     "transform": {
-      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
     "moduleFileExtensions": [
       "ts",
       "js",
       "json"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testEnvironmentOptions": {
+      "customExportConditions": ["node", "node-addons"]
+    }
   }
 }
