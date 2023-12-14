@@ -4,6 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "build": "tsc",
     "start": "node ./dist/index.js",
     "prepare": "husky install",
     "lint": "eslint ./src  -c .eslintrc.cjs --ext '**/*.{json,md,yml,js,jsx,mjs,cjs,ts,tsx,cts,mts}' --report-unused-disable-directives --max-warnings 0",

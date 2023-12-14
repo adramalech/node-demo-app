@@ -23,7 +23,8 @@
       "allowJs": false,
       "isolatedModules": true,
       "useDefineForClassFields": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "declaration": true
   },
   "include": ["src/**/*"]
 }
