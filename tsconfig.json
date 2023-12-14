@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-      "module": "ESNext",
+      "module": "Node16",
       "esModuleInterop": true,
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
@@ -8,7 +8,7 @@
       "lib": ["ES2022"],
       "target": "ES2022",
       "noImplicitAny": true,
-      "moduleResolution": "node",
+      "moduleResolution": "Node16",
       "sourceMap": true,
       "outDir": "dist",
       "alwaysStrict": true,
@@ -17,7 +17,13 @@
       "baseUrl": ".",
       "incremental": true,
       "typeRoots": ["./src/types", "./node_modules/@types"],
-      "downlevelIteration": true
+      "downlevelIteration": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "allowJs": false,
+      "isolatedModules": true,
+      "useDefineForClassFields": true,
+      "skipLibCheck": true
   },
   "include": ["src/**/*"]
 }
