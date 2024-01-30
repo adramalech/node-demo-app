@@ -9,13 +9,15 @@ module.exports = {
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:import/recommended',
-    "plugin:import/typescript",
+    'plugin:import/typescript',
     'plugin:unicorn/recommended',
     'plugin:json/recommended',
     'plugin:markdown/recommended',
     'plugin:yml/standard',
     'plugin:jest/recommended',
-    'plugin:prettier/recommended'
+    'plugin:jest/style',
+    'plugin:prettier/recommended',
+    'plugin:you-dont-need-lodash-underscore/compatible',
   ],
   parserOptions: {
     project: ['./tsconfig.json'],
@@ -32,7 +34,7 @@ module.exports = {
     'unicorn',
     'json',
     'markdown',
-    "jest"
+    'jest',
   ],
   rules: {
     'no-duplicate-imports': 'error',
@@ -49,7 +51,7 @@ module.exports = {
     'import/no-duplicates': 'error',
     'import/no-unassigned-import': 'error',
     'import/no-unresolved': 'error',
-    semi: ['error', 'never'],
+    semi: ['error', 'always'],
     'comma-dangle': 'always-multiline',
     'max-len': ['error', { 
       code: 160, 
@@ -62,16 +64,43 @@ module.exports = {
       ignoreUrls: true, 
       ignoreUrls: true 
     }],
-    '@typescript-eslint/comma-dangle': ['error', 'always-multiline']
+    '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+    'no-var': 'error',
+    'no-empty': 'error',
+    'no-unused-expressions': ['error', { 'allowTernary': true }],
+    curly: 'error',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      { 
+        'selector': 'variableLike', 'format': ['camelCase'] 
+      },
+      {
+        'selector': 'variable',
+        'format': ['camelCase', 'UPPER_CASE']
+      },
+      {
+        'selector': 'variable',
+        'types': ['boolean'],
+        'format': ['PascalCase'],
+        'prefix': ['is', 'should', 'has', 'can', 'did', 'will']
+      },
+      {
+        'selector': 'typeParameter',
+        'format': ['PascalCase'],
+        'prefix': ['T']
+      }
+    ],
   },
   ignorePatterns: [
-    'dist', 
-    '.eslintrc.cjs',
-    'prettierrc.mts',
+    './dist', 
+    './.eslintrc.cjs',
+    './.prettierrc.mts',
+    './package.json',
+    './package-lock.json',
   ],
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
+      '@typescript-eslint/parser': ['.ts']
     },
     'import/resolver': {
       typescript: {
@@ -85,5 +114,5 @@ module.exports = {
         ],
       }
     }
-  },
+  }
 }

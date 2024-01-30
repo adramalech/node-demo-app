@@ -1,23 +1,23 @@
-import Fastify from 'fastify'
-import helmet from '@fastify/helmet'
-import cookie from '@fastify/cookie'
-import rateLimit from '@fastify/rate-limit'
-import cors from '@fastify/cors'
+import Fastify from 'fastify';
+import helmet from '@fastify/helmet';
+import cookie from '@fastify/cookie';
+import rateLimit from '@fastify/rate-limit';
+import cors from '@fastify/cors';
 
 
-const fastify = Fastify({
+const server = Fastify({
   logger: true
-})
+});
 
-fastify.register(cookie, {
+server.register(cookie, {
   secret: 'secret',
-})
+});
 
-fastify.register(helmet, { global: true })
+server.register(helmet, { global: true });
 
-fastify.register(cors, { /* OPTIONS here */ })
+server.register(cors, { /* OPTIONS here */ });
 
-fastify.register(rateLimit, {
+server.register(rateLimit, {
   global : false, // default true
   max: 3, // default 1000
   ban: 2, // default -1
@@ -26,7 +26,7 @@ fastify.register(rateLimit, {
   cache: 10000, // default 5000
   allowList: ['127.0.0.1'], // default []
   redis: null, //new Redis({ host: '127.0.0.1' }), // default null
-  nameSpace: 'teste-ratelimit-', // default is 'fastify-rate-limit-'
+  nameSpace: 'test-ratelimit-', // default is 'fastify-rate-limit-'
   continueExceeding: true, // default false
   skipOnError: true, // default false
   keyGenerator: (request) => request.ip, // default
@@ -43,26 +43,26 @@ fastify.register(rateLimit, {
     'x-ratelimit-reset': true,
     'retry-after': true
   }
-})
+});
 
-fastify.setErrorHandler((error, _, reply) => {
+server.setErrorHandler((error, _, reply) => {
   if (error.statusCode === 429) {
-    reply.code(429)
-    error.message = 'You hit the rate limit! Slow down please!'
+    reply.code(429);
+    error.message = 'You hit the rate limit! Slow down please!';
   }
 
-  reply.send(error)
-})
+  reply.send(error);
+});
 
-fastify.get('/', async (_, reply) => {
-  reply.type('application/json').code(200)
-  return { hello: 'world' }
-})
+server.get('/', async (_, reply) => {
+  reply.type('application/json').code(200);
+  return { hello: 'world' };
+});
 
 
-fastify.listen({ port: 3000 }, err  => {
+server.listen({ port: 3000 }, err  => {
   if (err) {
-    throw err
+    throw err;
   }
   console.log('Example app listening on port 3000!');
 });

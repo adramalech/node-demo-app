@@ -1,11 +1,11 @@
 import prettier from 'prettier'
 
 const config: prettier.Config = {
-  printWidth: 160,
+  printWidth: 120,
   trailingComma: 'es5',
   bracketSpacing: true,
   tabWidth: 4,
-  semi: false,
+  semi: true,
   singleQuote: true,
 };
 
