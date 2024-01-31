@@ -10,3 +10,7 @@
 /build
 /dist
 /.cache
+.prettierrc.mjs
+.prettierignore
+jest.config.ts
+.eslintrc.cjs

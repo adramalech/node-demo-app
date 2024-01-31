@@ -52,23 +52,12 @@ module.exports = {
     'import/no-unassigned-import': 'error',
     'import/no-unresolved': 'error',
     semi: ['error', 'always'],
-    'comma-dangle': 'always-multiline',
-    'max-len': ['error', { 
-      code: 160, 
-      tabWidth: 4, 
-      ignorePattern: '^import .*',
-      ignoreStrings: true,
-      ignoreRegExpLiteral: true,
-      ignoreTemplateLiterals: true,
-      ignoreTrailingComments: true,
-      ignoreUrls: true, 
-      ignoreUrls: true 
-    }],
-    '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': [2, 'always-multiline'],
     'no-var': 'error',
     'no-empty': 'error',
     'no-unused-expressions': ['error', { 'allowTernary': true }],
     curly: 'error',
+    'max-len': ['error', { 'code': 120, 'tabWidth': 4 }],
     '@typescript-eslint/naming-convention': [
       'error',
       { 
@@ -90,13 +79,16 @@ module.exports = {
         'prefix': ['T']
       }
     ],
+    'prettier/prettier': ['error', { 'endOfLine': 'auto' }]
   },
+  
   ignorePatterns: [
     './dist', 
     './.eslintrc.cjs',
-    './.prettierrc.mts',
+    './.prettierrc.mjs',
     './package.json',
     './package-lock.json',
+    './jest.config.ts'
   ],
   settings: {
     'import/parsers': {
@@ -110,7 +102,9 @@ module.exports = {
           '.d.ts',
           '.js',
           '.json',
-          '.node'
+          '.node',
+          '.cjs',
+          '.mjs'
         ],
       }
     }
