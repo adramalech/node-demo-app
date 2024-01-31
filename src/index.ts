@@ -20,7 +20,7 @@ await server.register(cors, {
 
 await server.register(rateLimit, {
     global: false, // default true
-    max: 3, // default 1000
+    max: 3, // default 1000.
     ban: 2, // default -1
     timeWindow: 5000, // default 1000 * 60
     hook: 'preHandler', // default 'onRequest'
