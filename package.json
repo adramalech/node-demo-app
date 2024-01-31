@@ -25,6 +25,7 @@
     "fastify": "^4.26.0"
   },
   "devDependencies": {
+    "tsc-files": "^1.1.4",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.11.3",
     "@types/prettier": "^2.1.1",

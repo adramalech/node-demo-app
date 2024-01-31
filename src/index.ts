@@ -15,7 +15,7 @@ await server.register(cookie, {
 await server.register(helmet, { global: true });
 
 await server.register(cors, {
-    /* OPTIONS here */
+    /* OPTIONS here. */
 });
 
 await server.register(rateLimit, {

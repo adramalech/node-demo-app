@@ -1,6 +1,6 @@
 {
-    "*.{js,ts,md,yml}": [
-      "npx tsc",
+    "*.{js,ts,cjs,mjs,md,yml}": [
+      "tsc-files --noEmit",
       "prettier --config .prettierrc.mjs \"**/*.js\" \"**/*.ts\" \"**/*.cjs\" \"**/*.mjs\" --write",
       "eslint './src/**' --ext .json,.md,.yml,.js,.cjs,.mjs,.ts -c .eslintrc.cjs --report-unused-disable-directives --max-warnings 0 --fix --quiet"
     ]
