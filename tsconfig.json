@@ -25,7 +25,8 @@
       "isolatedModules": true,
       "useDefineForClassFields": true,
       "skipLibCheck": true,
-      "declaration": true
+      "declaration": true,
+      "noEmit": true
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules",],

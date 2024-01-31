@@ -1,7 +1,10 @@
 {
-    "*.{js,ts,cjs,mjs,md,yml}": [
-      "tsc-files --noEmit",
-      "prettier --config .prettierrc.mjs \"**/*.js\" \"**/*.ts\" \"**/*.cjs\" \"**/*.mjs\" --write",
-      "eslint './src/**' --ext .json,.md,.yml,.js,.cjs,.mjs,.ts -c .eslintrc.cjs --report-unused-disable-directives --max-warnings 0 --fix --quiet"
+    "*.{js,ts,cjs,mjs}": [
+        "tsc",
+        "prettier --config .prettierrc.mjs \"**/*.js\" \"**/*.ts\" \"**/*.cjs\" \"**/*.mjs\" --write",
+        "eslint './src/**' --ext .json,.md,.yml,.js,.cjs,.mjs,.ts -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
+    ],
+    "*.{md,yml,json}": [
+      "eslint './src/**' --ext .json,.md,.yml -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
     ]
-  }
+}

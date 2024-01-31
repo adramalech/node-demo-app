@@ -39,4 +39,4 @@ dist/**/*
 yarn.lock
 
 ./dist
-tsconfig.tsbuildinfo
+*.tsbuildinfo

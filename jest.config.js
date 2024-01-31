@@ -1,6 +1,6 @@
-import type { Config } from 'jest';
-
-const config: Config = {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var config = {
     automock: true,
     collectCoverageFrom: ['**/*.ts'],
     moduleFileExtensions: ['ts', 'json'],
@@ -16,5 +16,4 @@ const config: Config = {
     },
     verbose: true,
 };
-
-export default config;
+exports.default = config;
