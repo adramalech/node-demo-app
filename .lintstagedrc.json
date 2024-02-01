@@ -2,10 +2,12 @@
     "*.ts": [
         "tsc-files",
         "prettier --config .prettierrc.mjs \"**/*.ts\" --write",
-        "eslint './src/**' --ext .ts -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
+        "eslint './src/**' --ext .ts -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet",
+        "git add"
     ],
     "*.{js,cjs,mjs}": [
         "prettier --config .prettierrc.mjs \"**/*.js\" \"**/*.cjs\" \"**/*.mjs\" --write",
-        "eslint './src/**' --ext .js,.cjs,.mjs -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
+        "eslint './src/**' --ext .js,.cjs,.mjs -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet",
+        "git add"
     ]
 }
