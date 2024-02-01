@@ -26,7 +26,8 @@
       "useDefineForClassFields": true,
       "skipLibCheck": true,
       "declaration": true,
-      "noEmit": true
+      "noEmit": true,
+      "tsBuildInfoFile": "./incremental/node-demo-app.tsbuildinfo"
   },
   "include": ["./src/**/*"],
   "exclude": ["./node_modules",],

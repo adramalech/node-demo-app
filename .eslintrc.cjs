@@ -1,7 +1,7 @@
 module.exports = {
     root: true,
     env: {
-        es2022: true
+        es2022: true,
     },
     parser: '@typescript-eslint/parser',
     extends: [
@@ -75,7 +75,6 @@ module.exports = {
         ],
         'prettier/prettier': ['error', { endOfLine: 'auto' }],
     },
-
     ignorePatterns: [
         './dist',
         './.eslintrc.cjs',
@@ -91,7 +90,7 @@ module.exports = {
         'import/resolver': {
             typescript: {
                 alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-                extensions: ['.ts', '.d.ts', '.js', '.json', '.node', '.cjs', '.mjs'],
+                extensions: ['.ts', '.d.ts', '.js', '.json', '.node'],
             },
         },
     },

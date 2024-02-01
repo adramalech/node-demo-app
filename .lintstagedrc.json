@@ -4,9 +4,6 @@
         "prettier --config .prettierrc.mjs \"**/*.ts\" --write",
         "eslint './src/**' --ext .ts -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
     ],
-    "*.{md,yml,json}": [
-      "eslint './src/**' --ext .json,.md,.yml -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
-    ],
     "*.{js,cjs,mjs}": [
         "prettier --config .prettierrc.mjs \"**/*.js\" \"**/*.cjs\" \"**/*.mjs\" --write",
         "eslint './src/**' --ext .js,.cjs,.mjs -c .eslintrc.cjs --report-unused-disable-directives --fix --quiet"
